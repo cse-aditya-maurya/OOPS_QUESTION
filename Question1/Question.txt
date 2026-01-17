@@ -1,0 +1,80 @@
+Enterprise User Session Management System
+Question Description
+
+A large enterprise application wants to track user login sessions internally.
+
+The system must clearly distinguish between:
+
+Application-level initialization
+
+Object creation
+
+User-specific data handling
+
+System Behavior
+When the application starts:
+
+A message must be printed once indicating that the session system is ready.
+
+Each time a user session is created:
+
+A session object should automatically log its creation
+
+User-specific details must be initialized
+
+The total number of active sessions must increase
+
+Requirements
+
+Create a class named UserSession.
+
+Use a static initializer block to print:
+
+Session System Initialized
+
+
+Each session object must store the following non-static data members:
+
+userId
+
+userName
+
+Maintain a static variable to track the total number of active sessions.
+
+Use an instance initializer block to print:
+
+New Session Object Created
+
+
+Use a constructor to:
+
+Initialize userId and userName
+
+Increment the total session count
+
+Create a non-static method to display:
+
+userId
+
+userName
+
+In the main class:
+
+Create session objects using hardcoded data
+
+Display session details
+
+Print the total number of active sessions
+
+Hardcoded Data Set to Use
+User ID   User Name
+1         Admin
+2         Developer
+
+Expected Output
+Session System Initialized
+New Session Object Created
+New Session Object Created
+1 Admin
+2 Developer
+Total Sessions: 2
