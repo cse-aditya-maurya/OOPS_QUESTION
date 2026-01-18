@@ -1,0 +1,208 @@
+University Student Management System
+Scenario: University Student Record Management
+
+You are tasked with building a Student Management System for a university.
+The system must manage individual student data as well as university-wide statistics, demonstrating the proper use of static and non-static members in Object-Oriented Programming.
+
+System Requirements
+1. University-Level Requirements (Static Context)
+
+The University class must manage global university data.
+
+Static Variables
+
+totalStudents → initial value: 0
+
+UNIVERSITY_CODE → constant value: "UNI-2024"
+
+currentAcademicYear → initial value: "2024-2025"
+
+minPassingGrade → initial value: 2.0
+
+Static Methods
+
+displayUniversityInfo()
+Displays all university statistics
+
+updateAcademicYear(String newAcademicYear)
+Updates the academic year
+
+isPassingGrade(double gpa)
+Returns true if gpa ≥ minPassingGrade
+
+getTotalStudents()
+Returns total number of students
+
+Static Initializer Block
+
+Print the following messages when the class is loaded:
+
+University class loaded and initialized
+Setting up university system...
+
+2. Student-Level Requirements (Non-Static Context)
+
+The Student class must manage individual student data.
+
+Instance Variables
+
+studentId → auto-generated as "STU-" + sequential number starting from 1000
+
+name
+
+major
+
+gpa
+
+coursesEnrolled
+
+Static Variable
+
+nextStudentNumber → initial value: 1000
+
+Non-Static Methods
+
+displayStudentInfo()
+Displays complete student information
+
+updateGPA(double newGrade, int creditHours)
+Updates GPA after receiving a new grade
+
+enrollCourse(int creditHours)
+Enrolls student in a course
+
+isOnDeansList()
+Returns true if GPA ≥ 3.5
+
+Constructors
+
+Student(String name, String major)
+
+Student(String name, String major, double initialGpa)
+
+Initializer Blocks
+
+Static Initializer:
+
+Student class loaded and initialized
+
+
+Instance Initializer:
+
+Creating a new student object...
+
+
+Also initialize:
+
+coursesEnrolled = 0
+
+gpa = 0.0
+
+Main Method Execution Flow
+
+Display the system title
+
+Call University.displayUniversityInfo() before creating any objects
+
+Create three student objects using the following data:
+
+1. Alice Johnson | Computer Science | No initial GPA
+2. Bob Smith     | Mathematics      | Initial GPA: 3.2
+3. Carol Davis   | Physics          | Initial GPA: 3.8
+
+
+Perform student operations:
+
+Alice enrolls in 3 credit hours → GPA updated to 3.7
+
+Bob enrolls in 4 credit hours → GPA updated to 3.9
+
+Carol enrolls in 3 credit hours → GPA updated to 3.6
+
+Display individual student information
+
+Update academic year to "2025-2026"
+
+Test passing grade validation for GPA values 1.5 and 2.5
+
+Compare static vs instance data:
+
+Total students (static)
+
+Courses enrolled by individual students (instance)
+
+Display final university information
+
+Expected Output
+=== UNIVERSITY STUDENT MANAGEMENT SYSTEM ===
+
+University class loaded and initialized
+Setting up university system...
+
+=== UNIVERSITY INFORMATION ===
+University Code: UNI-2024
+Academic Year: 2024-2025
+Total Students: 0
+Minimum Passing Grade: 2.0
+
+Student class loaded and initialized
+
+Creating a new student object...
+Student created: STU-1000
+
+Creating a new student object...
+Student created: STU-1001
+
+Creating a new student object...
+Student created: STU-1002
+
+Alice Johnson enrolled in a 3 credit hour course
+Alice Johnson's GPA updated to: 3.7
+
+Bob Smith enrolled in a 4 credit hour course
+Bob Smith's GPA updated to: 3.9
+
+Carol Davis enrolled in a 3 credit hour course
+Carol Davis's GPA updated to: 3.6
+
+=== STUDENT INFORMATION ===
+Student ID: STU-1000
+Name: Alice Johnson
+Major: Computer Science
+GPA: 3.7
+Courses Enrolled: 3
+Passing Status: PASSING
+Dean's List: YES
+
+=== STUDENT INFORMATION ===
+Student ID: STU-1001
+Name: Bob Smith
+Major: Mathematics
+GPA: 3.9
+Courses Enrolled: 4
+Passing Status: PASSING
+Dean's List: YES
+
+=== STUDENT INFORMATION ===
+Student ID: STU-1002
+Name: Carol Davis
+Major: Physics
+GPA: 3.6
+Courses Enrolled: 3
+Passing Status: PASSING
+Dean's List: YES
+
+Academic year updated to: 2025-2026
+
+Is GPA 1.5 passing? false
+Is GPA 2.5 passing? true
+
+University Total Students : 3
+Student 1 Courses : 3
+Student 2 Courses : 4
+
+=== UNIVERSITY INFORMATION ===
+University Code: UNI-2024
+Academic Year: 2025-2026
+Total Students: 3
+Minimum Passing Grade: 2.0
