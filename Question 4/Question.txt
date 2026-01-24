@@ -1,0 +1,84 @@
+------------------------------------------------------------
+                TRANSPORT COMPANY DRIVER ROLES
+------------------------------------------------------------
+
+SCENARIO
+A transport company manages drivers and their assigned roles.
+
+- Person stores basic identity information.
+- Driver extends Person and stores license information.
+- CityDriver and HighwayDriver extend Driver and perform different duties.
+
+------------------------------------------------------------
+RULES
+------------------------------------------------------------
+1. All variables must be declared as private.
+2. Constructors must print the execution order.
+3. Each subclass must override the duty() method.
+4. The duty() method must internally call a common method
+   from the parent class.
+5. Multiple objects must be created to compare execution order.
+
+------------------------------------------------------------
+CLASSES TO CREATE
+------------------------------------------------------------
+
+Class Name : Person
+
+Variables:
+- name : String (private)
+
+Constructor:
+- Prints: Person registered: <name>
+
+Methods:
+- getName() : String
+
+
+Class Name : Driver (extends Person)
+
+Variables:
+- license : String (private)
+
+Constructor:
+- Prints: Driver licensed: <license>
+
+Methods:
+- commonDuty() : void
+
+
+Class Name : CityDriver (extends Driver)
+
+Methods:
+- duty() : void
+
+
+Class Name : HighwayDriver (extends Driver)
+
+Methods:
+- duty() : void
+
+------------------------------------------------------------
+HARDCODED DATA
+------------------------------------------------------------
+
+CityDriver:
+- Name    : Ramesh
+- License : CITY123
+
+HighwayDriver:
+- Name    : Suresh
+- License : HIGHWAY456
+
+------------------------------------------------------------
+EXPECTED OUTPUT
+------------------------------------------------------------
+Person registered: Ramesh
+Driver licensed: CITY123
+Person registered: Suresh
+Driver licensed: HIGHWAY456
+Ramesh is checking vehicle
+Ramesh driving in city traffic
+Suresh is checking vehicle
+Suresh driving on highway
+------------------------------------------------------------
