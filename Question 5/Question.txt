@@ -1,0 +1,78 @@
+------------------------------------------------------------
+                    TELECOM RECHARGE SYSTEM
+------------------------------------------------------------
+
+SCENARIO
+A telecom recharge system calculates the final recharge amount
+using multiple levels of inheritance.
+
+- Recharge stores the base recharge amount.
+- DataRecharge adds the data pack cost.
+- PremiumRecharge adds the service tax and calculates
+  the final payable amount.
+
+------------------------------------------------------------
+RULES
+------------------------------------------------------------
+1. Each class must have a private variable named amount.
+2. Constructors must print initialization messages.
+3. Getter methods must be used to access parent class data.
+4. Final amount must be calculated only in the last class.
+5. Each calculation step must print intermediate values.
+
+------------------------------------------------------------
+CLASSES TO CREATE
+------------------------------------------------------------
+
+Class Name : Recharge
+
+Variable:
+- amount : int (private)
+
+Constructor:
+- Prints: Base recharge initialized: <amount>
+
+Methods:
+- getAmount() : int
+
+
+Class Name : DataRecharge (extends Recharge)
+
+Variable:
+- amount : int (private)
+
+Constructor:
+- Prints: Data pack added: <amount>
+
+Methods:
+- getAmount() : int
+
+
+Class Name : PremiumRecharge (extends DataRecharge)
+
+Variable:
+- amount : int (private)
+
+Constructor:
+- Prints: Service tax added: <amount>
+
+Methods:
+- calculateFinalAmount() : int
+
+------------------------------------------------------------
+HARDCODED DATA
+------------------------------------------------------------
+Base Recharge : 299
+Data Pack     : 199
+Service Tax   : 50
+
+------------------------------------------------------------
+EXPECTED OUTPUT
+------------------------------------------------------------
+Base recharge initialized: 299
+Data pack added: 199
+Service tax added: 50
+Amount after data pack: 498
+Final recharge amount calculated
+Payable Amount: 548
+------------------------------------------------------------
