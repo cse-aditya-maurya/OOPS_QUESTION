@@ -1,0 +1,81 @@
+========================
+Ride-Sharing System
+========================
+
+------------------------
+Class: Driver
+------------------------
+Variables:
+- name : String
+- available : boolean
+
+Methods:
+- isAvailable() : boolean
+- markUnavailable() : void
+- getName() : String
+
+
+------------------------
+Class: Payment
+------------------------
+Variables:
+- successful : boolean
+
+Methods:
+- isSuccessful() : boolean
+
+
+------------------------
+Class: Ride
+------------------------
+Variables:
+- rideId : int
+- driver : Driver
+- payment : Payment
+
+Methods:
+- startRide() : void
+
+Logic:
+- A ride can start only if:
+  1. Driver is available
+  2. Payment is successful
+- Once a ride starts:
+  - Driver becomes unavailable
+
+
+========================
+Hardcoded Data
+========================
+Driver:
+- Name: Ramesh
+- Available: true
+
+Ride 101:
+- Payment: Successful
+- Driver: Ramesh
+
+Ride 102:
+- Payment: Successful
+- Driver: Ramesh (same driver)
+
+
+========================
+Execution Flow
+========================
+1. Start Ride 101
+   - Driver available: true
+   - Payment successful: true
+   → Ride starts
+   → Driver marked unavailable
+
+2. Start Ride 102
+   - Driver available: false
+   → Ride fails
+
+
+========================
+Expected Output
+========================
+Ride 101 started with driver Ramesh
+Ride 102 failed
