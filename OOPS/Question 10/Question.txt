@@ -1,0 +1,70 @@
+/*
+Bank Statement Line Parsing & Analysis
+
+A bank system stores each transaction in a single String.
+You must parse the String using only String methods.
+Do not use regex or external libraries.
+
+--------------------------------------------
+
+Create a class: BankTransactionProcessor
+
+Variable:
+String record
+
+Constructor:
+Initialize the transaction record.
+
+--------------------------------------------
+
+Create the following methods:
+
+String getAccountNumber()
+→ extract account number from record
+
+String getTransactionType()
+→ extract transaction type (Credit / Debit)
+
+int getAmount()
+→ extract transaction amount
+
+int getBalance()
+→ extract balance after transaction
+
+--------------------------------------------
+
+Create utility methods:
+
+String getMaskedAccount()
+→ mask account number except last 4 digits
+   Example: 9876543210 → XXXXXX3210
+
+boolean isLowBalance()
+→ return true if balance < 5000
+   else return false
+
+--------------------------------------------
+
+Driver Class (main method):
+
+String transaction =
+"ACC: 9876543210 | TYPE: Debit | AMOUNT: 4500 | BALANCE: 3800";
+
+Create object of BankTransactionProcessor
+Call all methods
+Print the output in the format shown below
+
+--------------------------------------------
+
+Expected Output:
+
+Account Number : XXXXXX3210
+Transaction    : Debit
+Amount         : 4500
+Balance        : 3800
+Low Balance?   : true
+
+--------------------------------------------
+
+End of Question
+*/

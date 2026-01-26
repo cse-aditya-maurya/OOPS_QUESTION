@@ -1,0 +1,65 @@
+========================
+Online Exam System
+========================
+
+------------------------
+Class: Student
+------------------------
+Variables:
+- name : String
+
+Methods:
+- getName() : String
+
+
+------------------------
+Class: Result
+------------------------
+Variables:
+- marks : int
+
+Methods:
+- isPass() : boolean
+
+
+------------------------
+Class: ExamSession
+------------------------
+Variables:
+- student : Student
+- result : Result
+
+Methods:
+- evaluate() : void
+
+Logic:
+- If marks are 40 or more:
+  → Student passes
+- If marks are less than 40:
+  → Student fails
+
+
+========================
+Hardcoded Data
+========================
+Student:
+- Name: Anita
+
+Exam Session:
+- Marks: 35
+
+
+========================
+Execution Flow
+========================
+1. Create Student "Anita"
+2. Assign marks = 35
+3. Evaluate exam result
+   - Marks < 40
+   → Student fails
+
+
+========================
+Expected Output
+========================
+Anita failed the exam

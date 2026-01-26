@@ -1,0 +1,79 @@
+=================================================
+Flight Reservation System
+(Using Composition, equals(), hashCode(), HashSet)
+=================================================
+
+------------------------
+Scenario Description
+------------------------
+A Flight Reservation System stores booking records.
+Each Booking object contains a Passenger object,
+demonstrating a HAS-A (composition) relationship.
+
+------------------------
+Business Rules
+------------------------
+1. Two Booking objects are considered equal
+   if they have the same bookingId.
+2. Passenger details must NOT affect booking equality.
+3. Booking objects are stored in a HashSet.
+
+------------------------
+Functional Requirements
+------------------------
+
+Step 1: Create Passenger Class
+------------------------
+Variables:
+- passportNo : String
+- name : String
+
+Requirements:
+- Create a parameterized constructor
+- Provide getter methods if required
+
+------------------------
+Step 2: Create Booking Class
+------------------------
+Variables:
+- bookingId : int
+- passenger : Passenger
+
+Requirements:
+- Create a parameterized constructor
+- Override equals(Object obj)
+  • Compare only bookingId
+- Override hashCode()
+  • Must be consistent with equals()
+- Override toString()
+  • Display bookingId and passenger name
+
+------------------------
+Step 3: Driver Class Logic (main method)
+------------------------
+1. Create a HashSet<Booking>
+2. Create Passenger objects using hardcoded data
+3. Create Booking objects using Passenger objects
+4. Add Booking objects to the HashSet
+5. Print the size of the HashSet
+6. Print all elements of the HashSet
+
+------------------------
+UML Relationship
+------------------------
+Passenger  <----  Booking
+(HAS-A / Composition)
+
+------------------------
+Hardcoded Input Data
+------------------------
+Booking ID | Passport No | Name
+--------------------------------
+9001       | P123        | Ravi
+9001       | P999        | Amit
+
+------------------------
+Expected Output
+------------------------
+1
+[Booking[id=9001, passenger=Ravi]]

@@ -1,0 +1,89 @@
+===============================================
+Vehicle Rental Charge Calculation System
+(Using Interface and Runtime Polymorphism)
+===============================================
+
+------------------------
+Problem Statement
+------------------------
+Design and implement a Vehicle Rental Charge Calculation System.
+The system calculates total rental charges based on:
+- Vehicle type
+- Rental duration
+- Base rental rate
+
+To handle peak demand and customer loyalty, the system must apply
+surge pricing and loyalty discounts.
+
+------------------------
+Business Requirements
+------------------------
+1. Rental duration and base rate must be encapsulated.
+2. Rental calculation must be abstracted using an interface.
+3. Surge pricing applies if rental duration exceeds 5 days.
+4. Loyal customers receive a 10% discount.
+5. Runtime polymorphism must be demonstrated.
+
+------------------------
+Interface: Rentable
+------------------------
+Methods:
+- calculateBaseRent() : double
+- calculateTotalRent() : double
+
+------------------------
+Abstract Class: Vehicle
+------------------------
+(implements Rentable)
+
+Private Variables:
+- days : int
+- baseRate : double
+- loyalCustomer : boolean
+
+Purpose:
+- Provide common attributes and behavior for all vehicles.
+- Allow subclasses to implement rental calculations.
+
+------------------------
+Vehicle Types
+------------------------
+- Bike
+- Car
+- Truck
+
+Each vehicle type must provide its own implementation of
+rental charge calculation using polymorphism.
+
+------------------------
+Pricing Rules
+------------------------
+1. Base Rent = days × baseRate
+2. Surge Pricing:
+   - Applied if days > 5
+   - Surge amount is vehicle-specific
+3. Loyalty Discount:
+   - 10% discount applied if customer is loyal
+4. Final Rent = Base Rent + Surge − Discount
+
+------------------------
+Hardcoded Input Data
+------------------------
+Bike:
+- Rental Duration: 6 days
+- Loyal Customer: Yes
+
+Car:
+- Rental Duration: 6 days
+- Loyal Customer: No
+
+Truck:
+- Rental Duration: 6 days
+- Loyal Customer: Yes
+
+------------------------
+Expected Output
+------------------------
+2070.0
+7500.0
+16200.0

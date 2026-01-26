@@ -1,0 +1,119 @@
+========================
+Travel Booking System
+(Using Constructor Overloading and Inheritance)
+========================
+
+------------------------
+Problem Statement
+------------------------
+Design and implement a Travel Booking System that manages ticket bookings
+for passengers travelling by train or flight using object-oriented concepts.
+
+------------------------
+System Description
+------------------------
+- Every booking is associated with a passenger
+- Each booking has a base ticket price
+- Passengers can:
+  1. Book only a ticket
+  2. Book a ticket with seat selection
+  3. Book a ticket with seat selection and meal service
+- Premium bookings provide additional premium services
+
+------------------------
+Rules and Conditions
+------------------------
+- Constructor overloading must be used to create different types of bookings
+- Inheritance must be used to represent PremiumBooking (IS-A Booking)
+- All price-related variables must be encapsulated
+- Premium service charge is added only if total booking cost exceeds 3000
+- The system must display passenger details and final booking cost
+
+------------------------
+Class: Passenger
+------------------------
+Variable:
+- name : String
+
+Constructor:
+- Passenger(String name)
+
+Method:
+- getName() : String
+
+------------------------
+Class: Booking
+------------------------
+Private Variables:
+- basePrice : double
+- seatCharge : double
+- mealCharge : double
+- passenger : Passenger
+
+Overloaded Constructors:
+- Booking(Passenger passenger, double basePrice)
+- Booking(Passenger passenger, double basePrice, double seatCharge)
+- Booking(Passenger passenger, double basePrice, double seatCharge, double mealCharge)
+
+Methods:
+- getTotalCost() : double
+- displayBooking() : void
+
+------------------------
+Class: PremiumBooking
+------------------------
+(extends Booking)
+
+Private Variable:
+- premiumCharge : double
+
+Overloaded Constructors:
+- PremiumBooking(Passenger passenger, double basePrice, double premiumCharge)
+- PremiumBooking(Passenger passenger, double basePrice, double seatCharge,
+                 double mealCharge, double premiumCharge)
+
+Method:
+- getTotalCost() : double
+  (Adds premium charge only if total cost exceeds 3000)
+
+------------------------
+UML Relationship
+------------------------
+Passenger  <----  Booking  <----  PremiumBooking
+
+------------------------
+Hardcoded Data Used
+------------------------
+
+Passenger 1:
+- Name: Ravi
+- Base Price: 2000
+- Seat Charge: 300
+
+Passenger 2:
+- Name: Anita
+- Base Price: 2500
+- Seat Charge: 400
+- Meal Charge: 300
+- Premium Charge: 500
+
+------------------------
+Execution Flow
+------------------------
+1. Create Passenger Ravi
+2. Create Booking with base price and seat charge
+3. Calculate and display total booking cost
+
+4. Create Passenger Anita
+5. Create PremiumBooking with seat, meal, and premium charges
+6. Add premium charge since total cost > 3000
+7. Display final booking cost
+
+------------------------
+Expected Output
+------------------------
+Passenger: Ravi
+Total Booking Cost: 2300.0
+
+Passenger: Anita
+Total Booking Cost: 3700.0

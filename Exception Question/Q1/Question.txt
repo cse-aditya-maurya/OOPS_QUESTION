@@ -1,0 +1,96 @@
+========================================
+        MULTI-LEVEL TAX CALCULATOR
+========================================
+
+Question Description
+--------------------
+You are developing a Government Tax Calculation System that computes tax
+using multiple income slabs. Different income types such as Salaried and
+Business taxpayers follow the same slab logic.
+
+The system must:
+- Validate income values
+- Prevent incorrect slab calculations
+- Detect logical inconsistencies using exceptions
+
+
+----------------------------------------
+Functional Requirements
+----------------------------------------
+
+Classes to be Created
+---------------------
+
+1. TaxPayer (Abstract Class)
+   Variables:
+   - double income
+
+   Methods:
+   - abstract double calculateTax()
+     throws InvalidIncomeException
+     throws TaxComputationException
+
+
+2. SalariedTaxPayer (extends TaxPayer)
+   Methods:
+   - Overrides calculateTax()
+   - Uses TaxCalculator for tax computation
+
+
+3. BusinessTaxPayer (extends TaxPayer)
+   Methods:
+   - Overrides calculateTax()
+   - Uses TaxCalculator for tax computation
+
+
+4. TaxCalculator
+   Methods:
+   - static double computeTax(double income)
+   Responsibilities:
+   - Applies tax slab logic
+   - Validates income
+   - Detects slab configuration errors
+
+
+5. InvalidIncomeException
+   - Custom checked exception
+   - Thrown when income is negative
+
+
+6. TaxComputationException
+   - Custom checked exception
+   - Thrown for logical slab calculation errors
+
+
+7. Driver
+   - Contains main() method
+   - Creates taxpayer objects
+   - Handles exceptions properly
+
+
+----------------------------------------
+Tax Slab Logic
+----------------------------------------
+
+Income Range (₹)              Tax Rate
+-------------------------------------
+0 – 2,50,000                  0%
+2,50,001 – 5,00,000           5%
+5,00,001 – 10,00,000          20%
+Above 10,00,000               30%
+
+
+----------------------------------------
+Hardcoded Test Data
+----------------------------------------
+
+TaxPayer Type : Business
+Income         : -750000
+
+
+----------------------------------------
+Expected Output
+----------------------------------------
+
+Tax Calculation Error!
+Reason: Income cannot be negative.

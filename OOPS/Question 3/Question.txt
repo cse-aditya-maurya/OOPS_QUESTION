@@ -1,0 +1,61 @@
+========================================
+Elevator Floor Control System
+========================================
+
+Question Description:
+An elevator system must restrict floor movement to ensure safety and proper operation.
+
+----------------------------------------
+Rules:
+----------------------------------------
+- Floors range from 1 to 10
+- The elevator cannot go below floor 1
+- The elevator cannot go above floor 10
+- The floor value must be protected from direct modification
+
+----------------------------------------
+Requirements:
+----------------------------------------
+1. Create a class named "Elevator"
+2. Store the current floor as a private data member
+3. Provide public methods:
+   - moveUp()   : Moves the elevator up by one floor if possible
+   - moveDown() : Moves the elevator down by one floor if possible
+4. Ensure the elevator always stays within the valid floor range
+5. Use hardcoded data to test the application
+
+----------------------------------------
+UML Diagram (Text Representation):
+----------------------------------------
+Class: Elevator
+----------------------------------------
+- currentFloor : int (private)
+----------------------------------------
++ moveUp()     : void
++ moveDown()   : void
+----------------------------------------
+
+----------------------------------------
+Hardcoded Test Data:
+----------------------------------------
+Initial Floor : 9
+Move Up       : 2 times
+Move Down     : 1 time
+
+----------------------------------------
+Execution Steps:
+----------------------------------------
+1. Elevator starts at floor 9
+2. First moveUp() → reaches floor 10
+3. Second moveUp() → already at top floor
+4. moveDown() → moves down to floor 9
+
+----------------------------------------
+Expected Output:
+----------------------------------------
+Already at top floor
+Current Floor: 9
+
+========================================
+End of File
+========================================
